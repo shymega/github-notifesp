@@ -1,35 +1,23 @@
 {
   "name": "github-notifesp",
-  "image": "docker.io/espressif/idf-rust:esp32_v4.4_1.64.0.0",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
   "settings": {
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
     "editor.formatOnSaveMode": "file",
     "editor.formatOnType": true,
-    "lldb.executable": "/usr/bin/lldb",
-    "files.watcherExclude": {
-      "**/target/**": true
-    },
-    "rust-analyzer.checkOnSave.command": "clippy",
-    "rust-analyzer.checkOnSave.allTargets": false,
-    "[rust]": {
-      "editor.defaultFormatter": "rust-lang.rust-analyzer"
-    }
+    "idf.showOnboardingOnInit": false,
+    "idf.toolsPath": "/opt/esp",
+    "idf.espIdfPath": "/opt/esp/idf",
+    "idf.pythonBinPath": "/opt/esp/python_env/idf4.2_py3.6_env/bin/python",
+    "terminal.integrated.shell.linux": "/bin/bash"
   },
   "extensions": [
-    "rust-lang.rust-analyzer",
-    "tamasfe.even-better-toml",
-    "serayuzgur.crates",
-    "mutantdino.resourcemonitor",
-    "yzhang.markdown-all-in-one",
-    "webfreak.debug",
-    "actboy168.tasks"
+    "espressif.esp-idf-extension",
+    "ms-vscode.cmake-tools",
+    "ms-vscode.cpptools"
   ],
-  "forwardPorts": [
-    9012,
-    9333,
-    8000
-  ],
-  "workspaceMount": "source=${localWorkspaceFolder},target=/home/esp/github-notifesp,type=bind,consistency=cached",
-  "workspaceFolder": "/home/esp/github-notifesp"
+  "userEnvProbe": "loginInteractiveShell"
 }
