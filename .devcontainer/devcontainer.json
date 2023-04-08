@@ -1,4 +1,4 @@
-
+{
   "name": "github-notifesp",
   "build": {
     "dockerfile": "Dockerfile"
